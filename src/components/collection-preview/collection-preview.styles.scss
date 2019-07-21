@@ -1,0 +1,26 @@
+.collection-preview {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 30px;
+
+  .title {
+    font-size: 28px;
+    margin-bottom: 25px;
+  }
+
+  .preview {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 100%;
+
+    @media screen and (max-width: 720px) {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 20px;
+      grid-template-rows: auto;
+      justify-items: stretch;
+      align-items: stretch;
+    }
+  }
+}
