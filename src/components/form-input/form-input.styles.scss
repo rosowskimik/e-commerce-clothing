@@ -30,6 +30,14 @@ $sub-color: #777;
         @include shrinkLabel();
       }
     }
+
+    &.error {
+      border-bottom: 1px solid rgb(255, 54, 54);
+
+      & ~ .input-label {
+        color: rgb(255, 54, 54);
+      }
+    }
   }
 
   input[type='password'] {
