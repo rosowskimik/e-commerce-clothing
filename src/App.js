@@ -11,6 +11,7 @@ import Header from './components/header/header.component';
 import Homepage from './pages/homepage/homepage.component';
 import ShopPage from './pages/shop/shop.component';
 import SignInAndUp from './pages/sign-in-and-up/sign-in-and-up.component';
+import Checkout from './pages/checkout/checkout.component.jsx';
 
 import './App.css';
 
@@ -57,6 +58,7 @@ class App extends Component {
               this.props.currentUser ? <Redirect to='/' /> : <SignInAndUp />
             }
           />
+          <Route exact path='/checkout' component={Checkout} />
         </Switch>
       </Fragment>
     );
