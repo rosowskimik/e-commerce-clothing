@@ -5,6 +5,7 @@
   border-bottom: 1px solid darkgrey;
   padding: 15px 0;
   font-size: 1.9vw;
+  text-align: center;
   align-items: center;
 
   .image-container {
@@ -24,7 +25,17 @@
   }
 
   .quantity {
-    padding-left: 20px;
+    display: flex;
+    justify-content: center;
+    -webkit-user-select: none;
+
+    .arrow {
+      cursor: pointer;
+    }
+
+    .value {
+      margin: 0 10px;
+    }
   }
 
   .remove-button {
