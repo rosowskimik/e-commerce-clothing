@@ -34,4 +34,17 @@
     margin-left: auto;
     font-size: 36px;
   }
+
+  .test-warning {
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 25px;
+    margin: 15px;
+    color: red;
+
+    & ~ span {
+      margin-left: auto;
+      margin-bottom: 10px;
+    }
+  }
 }

@@ -21,6 +21,16 @@
     border: 1px solid #000;
   }
 
+  &:disabled {
+    cursor: default;
+    background: #222;
+    color: #eee;
+
+    & > * {
+      pointer-events: none;
+    }
+  }
+
   &.inverted {
     background: #fff;
     color: #000;
