@@ -14,7 +14,7 @@
     flex-wrap: wrap;
     width: 100%;
 
-    @media screen and (max-width: 720px) {
+    @media screen and (max-width: 760px) {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
       gap: 20px;
