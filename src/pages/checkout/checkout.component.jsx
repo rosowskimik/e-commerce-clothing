@@ -7,7 +7,7 @@ import {
   selectCartTotal
 } from '../../redux/cart/cart.selectors';
 
-import CheckoutItem from '../../components/checkout-item/checkout-item.component';
+import CheckoutItemContainer from '../../components/checkout-item/checkout-item.container';
 import StripeButton from '../../components/stripe-button/stripe-button.component';
 
 import {
@@ -40,7 +40,7 @@ const Checkout = ({ cartItems, totalPrice }) => (
     </CheckoutHeader>
     {cartItems.length ? (
       cartItems.map(cartItem => (
-        <CheckoutItem key={cartItem.id} cartItem={cartItem} />
+        <CheckoutItemContainer key={cartItem.id} cartItem={cartItem} />
       ))
     ) : (
       <EmptyMessage>Your cart is empty</EmptyMessage>

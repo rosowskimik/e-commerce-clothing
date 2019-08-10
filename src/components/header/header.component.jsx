@@ -6,8 +6,8 @@ import { selectCurrentUser } from '../../redux/user/user.selectors';
 import { selectCartHidden } from '../../redux/cart/cart.selectors';
 import { auth } from '../../firebase/firebase.utils';
 
-import CartIcon from '../cart-icon/cart-icon.component';
-import CartDropdown from '../cart-dropdown/cart-dropdown.component';
+import CartIconContainer from '../cart-icon/cart-icon.container';
+import CartDropdownContainer from '../cart-dropdown/cart-dropdown.container';
 import { ReactComponent as Logo } from '../../assets/crown.svg';
 
 import {
@@ -33,9 +33,9 @@ const Header = ({ currentUser, hidden }) => {
         ) : (
           <OptionLink to='/signin'>Sign in</OptionLink>
         )}
-        <CartIcon />
+        <CartIconContainer />
       </OptionsContainer>
-      {hidden ? null : <CartDropdown />}
+      {hidden ? null : <CartDropdownContainer />}
     </HeaderContainer>
   );
 };
