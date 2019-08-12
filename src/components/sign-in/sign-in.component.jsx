@@ -1,13 +1,4 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import { createStructuredSelector } from 'reselect';
-
-import { selectError } from '../../redux/user/user.selectors';
-
-import {
-  googleSignInStart,
-  emailSignInStart
-} from '../../redux/user/user.actions';
 
 import FormInput from '../form-input/form-input.component';
 import CustomButton from '../custom-button/custom-button.component';
@@ -79,17 +70,4 @@ class SignIn extends Component {
   }
 }
 
-const mapStateToProps = createStructuredSelector({
-  error: selectError
-});
-
-const mapDispatchToProps = dispatch => ({
-  googleSignInStart: () => dispatch(googleSignInStart()),
-  emailSignInStart: (email, password) =>
-    dispatch(emailSignInStart({ email, password }))
-});
-
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(SignIn);
+export default SignIn;

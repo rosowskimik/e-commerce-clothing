@@ -1,15 +1,15 @@
 import React from 'react';
 
-import SignIn from '../../components/sign-in/sign-in.component';
-import SignUp from '../../components/sign-up/sign-up.component';
+import SignInContainer from '../../components/sign-in/sign-in.container';
+import SignUpContainer from '../../components/sign-up/sign-up.container';
 
 import { SignInAndUpPageContainer } from './sign-in-and-up.styles';
 
 const SignInAndUp = () => {
   return (
     <SignInAndUpPageContainer>
-      <SignIn />
-      <SignUp />
+      <SignInContainer />
+      <SignUpContainer />
     </SignInAndUpPageContainer>
   );
 };
