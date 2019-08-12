@@ -1,8 +1,18 @@
 import userActionTypes from './user.types';
 
-export const setCurrentUser = user => ({
-  type: userActionTypes.SET_CURRENT_USER,
+export const signUpStart = (email, password, displayName) => ({
+  type: userActionTypes.SIGN_UP_START,
+  payload: { email, password, displayName }
+});
+
+export const signUpSuccess = user => ({
+  type: userActionTypes.SIGN_UP_SUCCESS,
   payload: user
+});
+
+export const signUpFailure = error => ({
+  type: userActionTypes.SIGN_UP_FAILURE,
+  payload: error
 });
 
 export const emailSignInStart = emailAndPassword => ({
