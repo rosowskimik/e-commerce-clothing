@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
 
 import { selectCurrentUser } from './redux/user/user.selectors';
+import { checkCurrentUser } from './redux/user/user.actions';
 
 import Header from './components/header/header.component';
 import Homepage from './pages/homepage/homepage.component';
@@ -15,21 +16,8 @@ import './App.css';
 
 class App extends Component {
   componentDidMount() {
-    // const { setCurrentUser } = this.props;
-    // this.unsubscribeFromAuth = auth.onAuthStateChanged(async userAuth => {
-    //   if (userAuth) {
-    //     const userRef = await createUserProfileDocument(userAuth);
-    //     this.unsubscribeFromSnapShot = userRef.onSnapshot(
-    //       snapShot => {
-    //         setCurrentUser({
-    //           id: userRef.id,
-    //           ...snapShot.data()
-    //         });
-    //       },
-    //       error => setCurrentUser(null)
-    //     );
-    //   }
-    // });
+    const { checkCurrentUser } = this.props;
+    checkCurrentUser();
   }
 
   render() {
@@ -57,4 +45,11 @@ const mapStateToProps = createStructuredSelector({
   currentUser: selectCurrentUser
 });
 
-export default connect(mapStateToProps)(App);
+const mapDispatchToProps = dispatch => ({
+  checkCurrentUser: () => dispatch(checkCurrentUser())
+});
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(App);

@@ -67,6 +67,15 @@ export const convertCollectionSnapshotToMap = collections => {
   }, {});
 };
 
+export const getCurrentUser = () => {
+  return new Promise((resolve, reject) => {
+    const unsubscribe = auth.onAuthStateChanged(userAuth => {
+      unsubscribe();
+      resolve(userAuth);
+    }, reject);
+  });
+};
+
 // Add new Collection and its documents
 export const addCollectionAndDocuments = async (
   collectionKey,
