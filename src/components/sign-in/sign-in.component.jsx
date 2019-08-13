@@ -29,7 +29,7 @@ class SignIn extends Component {
 
   render() {
     const { email, password } = this.state;
-    const { error, googleSignInStart } = this.props;
+    const { googleSignInStart } = this.props;
 
     return (
       <SignInContainer>
@@ -50,7 +50,6 @@ class SignIn extends Component {
             name='password'
             value={password}
             label='Password'
-            error={error}
             onChange={this.handleChange}
             required
           />

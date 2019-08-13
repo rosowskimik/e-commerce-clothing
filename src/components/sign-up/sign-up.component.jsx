@@ -68,6 +68,7 @@ class SignUp extends Component {
             value={email}
             label='Email'
             onChange={this.handleChange}
+            required
           />
           <FormInput
             type='password'
@@ -76,6 +77,7 @@ class SignUp extends Component {
             label='Password'
             error={error}
             onChange={this.handleChange}
+            required
           />
           <FormInput
             type='password'
@@ -84,6 +86,7 @@ class SignUp extends Component {
             label={error ? error : 'Confirm Password'}
             error={error}
             onChange={this.handleChange}
+            required
           />
           <CustomButton type='submit'>Create an account</CustomButton>
         </form>
