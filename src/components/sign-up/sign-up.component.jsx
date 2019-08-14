@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
 
 import FormInput from '../form-input/form-input.component';
-import CustomButton from '../custom-button/custom-button.component';
 
-import { SignUpContainer } from './sign-up.styles';
+import { SignUpContainer, StyledCustomButton } from './sign-up.styles';
 
 const SignUp = ({ signUpStart }) => {
   const [userCredentials, setUserCredentials] = useState({
@@ -92,7 +91,7 @@ const SignUp = ({ signUpStart }) => {
           onChange={handleChange}
           required
         />
-        <CustomButton type='submit'>Create an account</CustomButton>
+        <StyledCustomButton type='submit'>Create an account</StyledCustomButton>
       </form>
     </SignUpContainer>
   );

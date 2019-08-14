@@ -14,6 +14,10 @@ export const HeaderContainer = styled.div`
   z-index: 99;
   box-shadow: 0 5px 30px rgba(0, 0, 0, 0.08);
   text-transform: uppercase;
+
+  @media screen and (max-height: 400px) {
+    position: absolute;
+  }
 `;
 
 export const LogoContainer = styled(Link)`

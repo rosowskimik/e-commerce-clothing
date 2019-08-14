@@ -3,10 +3,11 @@ import styled from 'styled-components';
 export const CheckoutItemContainer = styled.div`
   width: 100%;
   display: flex;
+  justify-content: space-between;
   min-height: 100px;
   border-bottom: 1px solid darkgrey;
   padding: 15px 0;
-  font-size: 1.9vw;
+  font-size: 1rem;
   text-align: center;
   align-items: center;
 `;
@@ -19,10 +20,18 @@ export const ImageContainer = styled.div`
     width: 100%;
     height: 100%;
   }
+
+  @media screen and (max-width: 340px) {
+    display: none;
+  }
 `;
 
 export const TextContainer = styled.span`
   width: 23%;
+
+  @media screen and (max-width: 600px) {
+    font-size: 0.7rem;
+  }
 `;
 
 export const QuantityContainer = styled(TextContainer)`
