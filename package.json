@@ -12,7 +12,7 @@
     "start": "node server.js",
     "build": "npm run build --prefix client",
     "dev": "concurrently --kill-others-on-fail \"npm run client\" \"npm run server\"",
-    "heroku-postbuild": "cd client && npm install --no-shrinkwrap && npm npm run build"
+    "heroku-postbuild": "cd client && npm install && npm run build"
   },
   "repository": {
     "type": "git",
