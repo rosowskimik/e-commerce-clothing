@@ -2,6 +2,10 @@
   "name": "e-clothing-server",
   "version": "1.0.0",
   "main": "server.js",
+  "engines": {
+    "node": "12.6.0",
+    "npm": "6.9.0"
+  },
   "scripts": {
     "client": "npm start --prefix client",
     "server": "nodemon server.js",
