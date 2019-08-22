@@ -14,6 +14,10 @@ export const CollectionItemContainer = styled.div`
   &:hover {
     & div:first-child {
       opacity: 0.85;
+
+      @media screen and (max-width: 600px) {
+        opacity: unset;
+      }
     }
 
     button {
@@ -52,5 +56,9 @@ export const AddButton = styled(CustomButton)`
 
   @media screen and (max-width: 885px) and (min-width: 720px) {
     transform: scale(0.83);
+  }
+
+  @media screen and (max-width: 600px) {
+    display: flex;
   }
 `;

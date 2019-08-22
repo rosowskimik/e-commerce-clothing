@@ -8,9 +8,10 @@ export const CollectionPreviewContainer = styled.div`
 `;
 
 export const TitleContainer = styled(Link)`
-  font-size: 28px;
+  font-size: 38px;
+  font-weight: bold;
   margin-bottom: 25px;
-  width: 1%;
+  align-self: center;
 `;
 
 export const PreviewContainer = styled.div`

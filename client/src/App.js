@@ -12,7 +12,7 @@ import ShopPage from './pages/shop/shop.component';
 import SignInAndUpContainer from './pages/sign-in-and-up/sign-in-and-up.container';
 import Checkout from './pages/checkout/checkout.component.jsx';
 
-import './App.css';
+import { GlobalStyle } from './global.styles';
 
 const App = ({ currentUser, checkCurrentUser }) => {
   useEffect(() => {
@@ -21,6 +21,7 @@ const App = ({ currentUser, checkCurrentUser }) => {
 
   return (
     <Fragment>
+      <GlobalStyle />
       <Header />
       <Switch>
         <Route exact path='/' component={Homepage} />

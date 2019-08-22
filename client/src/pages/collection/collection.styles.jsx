@@ -6,7 +6,7 @@ export const CollectionPageContainer = styled.div`
 
   h2 {
     font-size: 38px;
-    margin: 0 auto 30px;
+    margin: 0 auto 25px;
   }
 `;
 
@@ -18,5 +18,6 @@ export const ItemsContainer = styled.div`
 
   @media screen and (max-width: 760px) {
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
   }
 `;
