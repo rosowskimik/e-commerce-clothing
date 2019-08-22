@@ -1,4 +1,4 @@
-import React, { useEffect, Fragment } from 'react';
+import React, { useEffect, lazy, Fragment, Suspense } from 'react';
 import { Switch, Route, Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
@@ -7,12 +7,16 @@ import { selectCurrentUser } from './redux/user/user.selectors';
 import { checkCurrentUser } from './redux/user/user.actions';
 
 import Header from './components/header/header.component';
-import Homepage from './pages/homepage/homepage.component';
-import ShopPage from './pages/shop/shop.component';
-import SignInAndUpContainer from './pages/sign-in-and-up/sign-in-and-up.container';
-import Checkout from './pages/checkout/checkout.component.jsx';
+import Spinner from './components/spinner/spinner.component';
 
 import { GlobalStyle } from './global.styles';
+
+const Homepage = lazy(() => import('./pages/homepage/homepage.component'));
+const ShopPage = lazy(() => import('./pages/shop/shop.component'));
+const SignInAndUp = lazy(() =>
+  import('./pages/sign-in-and-up/sign-in-and-up.container')
+);
+const Checkout = lazy(() => import('./pages/checkout/checkout.component'));
 
 const App = ({ currentUser, checkCurrentUser }) => {
   useEffect(() => {
@@ -24,16 +28,16 @@ const App = ({ currentUser, checkCurrentUser }) => {
       <GlobalStyle />
       <Header />
       <Switch>
-        <Route exact path='/' component={Homepage} />
-        <Route path='/shop' component={ShopPage} />
-        <Route
-          exact
-          path='/signin'
-          render={() =>
-            currentUser ? <Redirect to='/' /> : <SignInAndUpContainer />
-          }
-        />
-        <Route exact path='/checkout' component={Checkout} />
+        <Suspense fallback={<Spinner />}>
+          <Route exact path='/' component={Homepage} />
+          <Route path='/shop' component={ShopPage} />
+          <Route
+            exact
+            path='/signin'
+            render={() => (currentUser ? <Redirect to='/' /> : <SignInAndUp />)}
+          />
+          <Route exact path='/checkout' component={Checkout} />
+        </Suspense>
       </Switch>
     </Fragment>
   );
