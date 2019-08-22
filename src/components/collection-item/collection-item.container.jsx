@@ -4,18 +4,18 @@ import { gql } from 'apollo-boost';
 
 import CollectionItem from './collection-item.component';
 
-const ADD_ITEM = gql`
-  mutation AddItem($item: Item!) {
-    addItem(item: $item) @client
+const ADD_ITEM_TO_CART = gql`
+  mutation AddItemToCart($item: Item!) {
+    addItemToCart(item: $item) @client
   }
 `;
 
 const CollectionItemContainer = props => (
-  <Mutation mutation={ADD_ITEM}>
-    {addItem => (
+  <Mutation mutation={ADD_ITEM_TO_CART}>
+    {addItemToCart => (
       <CollectionItem
         {...props}
-        addItem={item => addItem({ variables: { item } })}
+        addItem={item => addItemToCart({ variables: { item } })}
       />
     )}
   </Mutation>
