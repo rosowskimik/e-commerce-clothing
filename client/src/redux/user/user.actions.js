@@ -50,3 +50,7 @@ export const signOutFailure = error => ({
 export const checkCurrentUser = () => ({
   type: userActionTypes.CHECK_CURRENT_USER
 });
+
+export const clearUserError = () => ({
+  type: userActionTypes.CLEAR_USER_ERROR
+});
