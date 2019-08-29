@@ -6,18 +6,30 @@ export const ContactPageOverlay = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: space-around;
 `;
 
-export const ContactPageImage = styled.div`
+export const StyledText = styled.p`
   display: inline-block;
-  background-image: ${({ imageUrl }) => `url('${imageUrl}')`};
-  background-size: cover;
-  background-position: center;
-  width: 40vh;
-  height: 40vh;
+  width: 80%;
+  font-size: 2rem;
+  font-weight: 500;
+  text-align: center;
+
+  @media screen and (max-width: 600px) {
+    font-size: 1.5rem;
+  }
 `;
 
-export const ContactPageText = styled.h2`
-  font-size: 2rem;
+export const StyledLink = styled.a`
+  cursor: pointer;
+  font-weight: 600;
+
+  &:hover {
+    text-decoration: underline;
+  }
+`;
+
+export const StyledHeader = styled.h1`
+  font-size: 4rem;
 `;
