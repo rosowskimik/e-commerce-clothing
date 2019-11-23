@@ -7,4 +7,4 @@ This project was developed using:
  - Firebase as a backend for user authentification and storing shop items
  - Node (express) and Stripe to handle the payments
 
-You can see this page live [here](e-comm-test.herokuapp.com)
+You can see this page live [here](https://e-comm-test.herokuapp.com)
