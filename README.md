@@ -6,5 +6,3 @@ This project was developed using:
  - (Different branches are different versions of this page that use ContextAPI and GraphQL respectively for app state handling)
  - Firebase as a backend for user authentification and storing shop items
  - Node (express) and Stripe to handle the payments
-
-You can see this page live [here](https://e-comm-test.herokuapp.com)
